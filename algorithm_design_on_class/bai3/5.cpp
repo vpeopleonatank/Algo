@@ -46,7 +46,7 @@ int determinant( int matrix[][100], int n) {
 }
 
 void CalDet(int n, int c[][100]) {
-    
+      
 }
 
 int main() {
