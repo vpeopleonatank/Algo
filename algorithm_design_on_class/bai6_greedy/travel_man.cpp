@@ -12,7 +12,7 @@ int TravelMan(int a[][10], int n, int tour[MAX], int dinhDau) {
     int COST;   // Trong so nho nhat cua chu trinh
     int daxet[MAX];
 
-    for(k = 1; k <= n; k++) {
+    for(k = 0; k < n; k++) {
         daxet[k] = 0; // Chua dinh nao duoc xet
     }
     COST = 0;   // Luc dau, gia tri COST == 0
@@ -24,7 +24,7 @@ int TravelMan(int a[][10], int n, int tour[MAX], int dinhDau) {
     daxet[v] = 1;   // Dinh v da duoc xet
     while (i < n) {
         mini = 32147;
-        for(k = 1; k <= n; k++) {
+        for(k = 0; k < n; k++) {
             if(!daxet[k])
                 if (mini > a[v][k]) {
                     mini = a[v][k];
@@ -58,5 +58,8 @@ int main() {
         }
         int tour[MAX];
         cout << TravelMan(a, m, tour, 0) << endl;
+        for (int i = 0; i < m; i++) {
+          cout << tour[i];
+        }
     }
 }
