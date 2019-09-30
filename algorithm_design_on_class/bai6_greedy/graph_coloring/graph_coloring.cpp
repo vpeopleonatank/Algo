@@ -19,16 +19,16 @@ void ColorGraph() {
   bool unused[num_of_vertices];
 
   for (i = 0; i < num_of_vertices; i++)
-    unused[i] = 0;
+    unused[i] = true;
 
   for (i = 1; i < num_of_vertices; i++) {
     for (j = 0; j < graph[i].size(); j++) {
       if (color[graph[i][j]] != -1)
-        unused[color[graph[i][j]]] = true;
+        unused[color[graph[i][j]]] = false;
     }
     int cr;
     for (cr = 0; cr < num_of_vertices; cr++) {
-      if (unused[cr] == false)
+      if (unused[cr] == true)
         break;
     }
 
@@ -36,7 +36,7 @@ void ColorGraph() {
 
     for (j = 0; j < graph[i].size(); j++) {
       if (color[graph[i][j]] != -1)
-        unused[color[graph[i][j]]] = false;
+        unused[color[graph[i][j]]] = true;
     }
   }
 }
@@ -67,5 +67,6 @@ int main() {
     for (i = 0; i < num_of_vertices; i++) {
       cout << "Vertex " << i << " is colored " << color[i] << endl;
     }
+    cout << endl;
   }
 }
