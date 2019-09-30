@@ -1,16 +1,26 @@
 #include <iostream>
-#include <limits.h>
+#include <climits>
 
 #define MAX 10
 
 using namespace std;
 
-void PrintPath(int dist[], int V) {
+void PrintShortestPathValue(int dist[], int V) {
   for (int v = 0; v < V; v++) {
     cout << dist[v] << " ";
   }
+  cout << endl;
 }
 
+void PrintPath(int path[], int V) {
+  for (int v = 0; v < V; v++) {
+    cout << path[v] << " ";
+  }
+  cout << endl;
+}
+
+// Function to find minimum value from the set of vertices not yet
+// included in shortest path tree
 int GetMinDistance(int dist[], bool Sset[], int V) {
   int min = 99999, min_index;
 
@@ -25,6 +35,7 @@ int GetMinDistance(int dist[], bool Sset[], int V) {
 }
 
 void Dijkstra(int graph[][10], int start, int V) {
+  // array to store label
   int dist[V];
 
   bool Sset[V];
@@ -35,19 +46,22 @@ void Dijkstra(int graph[][10], int start, int V) {
     Sset[i] = false;
   }
   dist[start] = 0;
-  path[0] = start;
 
+  int current_position = 0;
   for (int count = 0; count < V - 1; count++) {
     int min_index = GetMinDistance(dist, Sset, V);
     Sset[min_index] = true;
+    path[current_position] = min_index;
+    current_position++;
 
     for (int v = 0; v < V; v++) {
-      if (!Sset[min_index] && graph[min_index][v] && dist[min_index] != 99999
+      if (!Sset[v] && graph[min_index][v] != 0 && dist[min_index] != 99999
           && dist[min_index] + graph[min_index][v] < dist[v])
         dist[v] = dist[min_index] + graph[min_index][v];
     }
   }
-  PrintPath(dist, V);
+  path[current_position] = GetMinDistance(dist, Sset, V);
+  PrintPath(path, V);
 }
 
 int main() {
@@ -60,8 +74,11 @@ int main() {
     cin >> V;
     int graph[MAX][MAX];
     for (int i = 0; i < V; i++) {
-      cin >> graph[i][i];
+      for (int j = 0; j < V; j++) {
+        cin >> graph[i][j];
+      }
     }
+
     Dijkstra(graph, 0, V);
   }
 }
