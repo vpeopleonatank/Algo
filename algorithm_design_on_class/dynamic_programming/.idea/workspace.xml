@@ -9,7 +9,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97f018d4-9672-4520-82b2-fccfb017419f" name="Default Changelist" comment="" />
+    <list default="true" id="97f018d4-9672-4520-82b2-fccfb017419f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/longest_common_subsequence/LCS.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/longest_common_subsequence/LCS.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/longest_common_subsequence/in.lcs" beforeDir="false" afterPath="$PROJECT_DIR$/longest_common_subsequence/in.lcs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/longest_common_subsequence/out.lcs" beforeDir="false" afterPath="$PROJECT_DIR$/longest_common_subsequence/out.lcs" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +30,10 @@
   <component name="ProjectId" id="1RrYrf9oSXHDK8ED9ejzHKIu9qC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -51,6 +58,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570426881964</updated>
       <workItem from="1570426883145" duration="59000" />
+      <workItem from="1570437779710" duration="49000" />
     </task>
     <servers />
   </component>
@@ -62,7 +70,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -75,6 +85,11 @@
           <url>file://$PROJECT_DIR$/longest_increasing_subsequence/sub_max.cpp</url>
           <line>10</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/shortest_path_floyd/floyd.cpp</url>
+          <line>20</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

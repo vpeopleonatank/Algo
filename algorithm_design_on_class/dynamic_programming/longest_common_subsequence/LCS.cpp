@@ -20,14 +20,14 @@ int lcs(string &a, string &b) {
       }  
     }
   }
-  cout << endl;
-  for(int i=1;i<=m;i++) {
-    for(int j=1;j<=n;j++) {
-      cout << f[i][j] << " ";
-    }
-    cout << endl;
-  }
-  cout << endl;
+  //cout << endl;
+  //for(int i=1;i<=m;i++) {
+    //for(int j=1;j<=n;j++) {
+      //cout << f[i][j] << " ";
+    //}
+    //cout << endl;
+  //}
+  //cout << endl;
 
   int index = f[m][n];
   char lcs[index+1];
