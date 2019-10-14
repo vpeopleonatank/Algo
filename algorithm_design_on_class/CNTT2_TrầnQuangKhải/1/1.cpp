@@ -5,10 +5,13 @@ using namespace std;
 
 // Hàm in giá trị MST được xây dựng lưu trong mảng root
 void PrintMST(int root[], int graph[][MAX], int V) {
-  cout << "Canh     Trong so\n";
+  cout << "Duong cap     Chi phi\n";
+  int sum = 0;
   for (int i = 1; i < V; i++) {
-    cout << root[i] << " - " << i << "    " << graph[i][root[i]] << endl;
+    sum += graph[i][root[i]];
+    cout << root[i] << " - " << i << "          " << graph[i][root[i]] << endl;
   }
+  cout << "tong chi phi xay dung he thong cap la " << sum << endl;
 }
 
 // Hàm tìm đỉnh với giá trị nhỏ nhất, từ tập các đỉnh không thuộc MST
@@ -56,9 +59,6 @@ void Prim(int graph[][MAX], int V) {
     // cập nhật giá trị khóa và chỉ số cha của các đỉnh kề của đỉnh được chọn
     // chỉ xét những đỉnh chưa thuộc MST
     for (int v = 0; v < V; v++) {
-// graph[u][v] is non zero only for adjacent vertices of m  
-            // mstSet[v] is false for vertices not yet included in MST  
-            // Update the key only if graph[u][v] is smaller than key[v]  
       // graph[u][v] ko là 0 chỉ đối với đỉnh kề của min_index 
       // MSTset[v] là sai đối với các đỉnh chưa thuộc MST
       // Cập nhật khóa chỉ khi graph[u][v] nhỏ hơn key[v]
@@ -73,8 +73,8 @@ void Prim(int graph[][MAX], int V) {
 }
 
 int main() {
-  freopen("in.prim", "r", stdin);
-  freopen("out.prim", "w", stdout);
+  freopen("in.1", "r", stdin);
+  freopen("out.1", "w", stdout);
 
   int test_case;
   cin >> test_case;

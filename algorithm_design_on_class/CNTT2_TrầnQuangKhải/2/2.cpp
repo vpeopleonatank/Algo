@@ -29,8 +29,8 @@ void SelectActivity(Activity act[], int num_of_activities) {
 }
 
 int main() {
-  freopen("in.xeplich", "r", stdin);
-  freopen("out.xeplich3", "w", stdout);  
+  freopen("in.2", "r", stdin);
+  freopen("out.2", "w", stdout);  
 
   int test_case;
   cin >> test_case;
