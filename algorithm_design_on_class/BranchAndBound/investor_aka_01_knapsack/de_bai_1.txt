@@ -1,0 +1,9 @@
+- Có một nhà đầu tư có một khoản tiền vốn M, muốn đầu tư vào N lĩnh vực. Sau khi tìm hiểu, nhà đầu tư
+biết rằng đầu tư vào lĩnh vực (i) 1 <= i <= N, sẽ mất chi phí là Ci, và có thể có lợi nhuận là Pi.
+Giả sử một phương án đầu tư được biểu diễn là x = (x1, x2, ..., xN). trong đó xi = 0/1 (không/ có)
+đầu tư cho lĩnh vực (i). Hãy tìm phương án tối ưu nhất cho nhà đầu tư theo nghĩa tổng lợi nhuận là
+lớn nhất
+
+tổng i=1->N (xi pi) -> max
+tổng i=1->N (xi pi) <= M
+các tham số M, N, P, C thuộc Z*+ (nguyên dương)
