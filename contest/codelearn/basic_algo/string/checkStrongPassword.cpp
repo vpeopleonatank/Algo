@@ -6,7 +6,7 @@ bool check(string p, string dict)
 {
   for (int j = 0; j < dict.length(); j++)
   {
-    if (p.find(dict.at(j) != string::npos))
+    if (p.find(dict.at(j)) != string::npos)
     {
       return true;
     }
@@ -22,12 +22,13 @@ bool checkStrongPassword(std::string password)
   string spe_chars = "!@#$%^&*()-+";
   if (password.length() < 6)
     return false;
-  if(check(password, nums))
+  if (check(password, nums))
   {
-    if(check(password, chars)) {
-      if(check(password, upper_chars))
+    if (check(password, chars))
+    {
+      if (check(password, upper_chars))
       {
-        if(check(password, spe_chars))
+        if (check(password, spe_chars))
         {
           return true;
         }
