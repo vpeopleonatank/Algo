@@ -2,12 +2,21 @@
 
 using namespace std;
 
-int removedDigit(int n, std::vector<int> s, int k)
+bool checkStrongPassword(std::string password)
 {
-
+  
 }
 
-int main() {
-    
+int main()
+{
+  string s;
+  cin >> s;
+  if (checkStrongPassword(s))
+  {
+    cout << "true";
+  }
+  else
+  {
+    cout << "false";
+  }
 }
-
