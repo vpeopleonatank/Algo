@@ -4,11 +4,12 @@
 #include <stdio.h>
 using namespace std;
 int c[10][10], x[10], xmin[10], chuaxet[10], k, n, s = 0, cmin, fmin = 10000,
-    start = 1;
+                                                   start = 1;
 // cmin là chi phi nho nhat giua 2 thanh pho
 // s: chi phi
 // xmin[] là chuoi xuat ra
-void Nhap() {
+void Nhap()
+{
   FILE *f;
   f = fopen("trenlop.txt", "r");
   fscanf(f, "%d", &n);
@@ -17,11 +18,14 @@ void Nhap() {
       fscanf(f, "%d", &c[i][j]);
   fclose(f);
 }
-void KhoiTao() {
+void KhoiTao()
+{
   cmin = c[1][2];
-  for (int i = 1; i <= n; i++) {
+  for (int i = 1; i <= n; i++)
+  {
     chuaxet[i] = 1;
-    for (int j = 1; j <= n; j++) {
+    for (int j = 1; j <= n; j++)
+    {
       if (i != j && c[i][j] != 0 && cmin > c[i][j])
         cmin = c[i][j];
     }
@@ -30,23 +34,30 @@ void KhoiTao() {
   chuaxet[1] = 0;
 }
 
-void Try(int k) {
+void Try(int k)
+{
   int g, tong, i, j;
-  for (j = 2; j <= n; j++) {
-    if (chuaxet[j] == 1) {
+  for (j = 2; j <= n; j++)
+  {
+    if (chuaxet[j] == 1)
+    {
       x[k] = j;
       chuaxet[j] = 0;
       s = s + c[x[k - 1]][x[k]];
       // printf("%d\n", j);
-      if (k < n) {
+      if (k < n)
+      {
         g = s + cmin * (n - k + 1);
-        if (g < fmin) {
+        if (g < fmin)
+        {
           Try(k + 1);
         }
       }
-      if (k == n) {
+      if (k == n)
+      {
         tong = s + c[x[n]][x[start]];
-        if (tong < fmin) {
+        if (tong < fmin)
+        {
           fmin = tong;
           for (i = 1; i <= n; i++)
             xmin[i] = x[i]; // xmin[] là chuoi ket qua in ra
@@ -57,16 +68,19 @@ void Try(int k) {
     }
   }
 }
-void Xuat() {
+void Xuat()
+{
   printf("Chi phi nho nhat la: %d", fmin);
   printf("\nHanh trinh nho nhat la: ");
-  for (int i = 1; i <= n; i++) {
+  for (int i = 1; i <= n; i++)
+  {
     printf("%d", xmin[i]);
     printf("->");
   }
   printf("1");
 }
-int main() {
+int main()
+{
   Nhap();
   KhoiTao();
   Try(2);

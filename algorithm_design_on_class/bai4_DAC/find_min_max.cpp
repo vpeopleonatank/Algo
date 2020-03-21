@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -25,15 +25,15 @@ void MinMax(int a[100], int l, int r, int &min, int &max) {
 
 int main() {
   freopen("in.find_min_max", "r", stdin);
-  freopen("out.find_min_max", "w", stdout);
+  // freopen("out.find_min_max", "w", stdout);
 
   int test_case;
   cin >> test_case;
 
   while (test_case--) {
     int n, min, max;
-    int a[n];
     cin >> n;
+    int a[n];
     for (int i = 0; i < n; i++) {
       cin >> a[i];
     }

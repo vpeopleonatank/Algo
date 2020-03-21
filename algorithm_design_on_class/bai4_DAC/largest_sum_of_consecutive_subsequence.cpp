@@ -34,7 +34,6 @@ int MaxRightVector(int a[], int i, int j) {
     return maxSum;
 }
 
-int s, e;
 int MaxSubVector(int a[], int i, int j) {
     if (i == j) return a[i];
     else {
@@ -43,29 +42,18 @@ int MaxSubVector(int a[], int i, int j) {
         int WR = MaxSubVector(a,m+1,j);
         int WM = MaxLeftVector(a,i,m) + MaxRightVector(a,m+1,j);
         int max3 = GetMax3(WL, WR, WM);
-        if (max3 == WL) {
-            s = i;
-            e = m;
-        } else if (max3 == WR) {
-            s = m+1;
-            e = j;
-        } else if (max3 == WM){
-            s = i;
-            e = j;
-        }
         
         return max3;
     }
 }
 
 int main() {
-    freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+    freopen("largest_sum.in", "r", stdin);
+    // freopen("out.txt", "w", stdout);
 
     int n;
     cin >> n;
-    s = -31247;
-    e = -32147;
+
     while (n--) {
         int m;
         cin >> m;
@@ -73,6 +61,6 @@ int main() {
         for (int i = 0; i <m; i++) {
             cin >> a[i];
         }
-        cout << MaxSubVector(a,0,m-1) <<  " " << s << " " << e << endl;
+        cout << MaxSubVector(a,0,m-1) << endl;
     }
 }

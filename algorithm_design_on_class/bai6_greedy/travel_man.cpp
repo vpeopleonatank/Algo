@@ -43,7 +43,7 @@ int TravelMan(int a[][10], int n, int tour[MAX], int dinhDau) {
 
 int main() {
   freopen("in.travelman", "r", stdin);
-  freopen("out.travelman", "w", stdout);
+  // freopen("out.travelman", "w", stdout);
 
   int n;
   cin >> n;

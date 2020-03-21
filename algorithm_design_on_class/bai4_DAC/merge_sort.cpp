@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdio.h>
 
 using namespace std;
 
@@ -53,7 +54,7 @@ void merge_sort(int a[100], int l, int r) {
 
 int main() {
   freopen("in.merge_sort", "r", stdin);
-  freopen("out.merge_sort", "w", stdout);
+  // freopen("out.merge_sort", "w", stdout);
 
   int test_case;
   cin >> test_case;
